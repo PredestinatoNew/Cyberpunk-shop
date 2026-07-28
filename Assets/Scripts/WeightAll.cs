@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,8 +6,7 @@ public class WeightAll : MonoBehaviour
     public FirstPersonController fpc;
     public GameObject WeightPanel;
     public GameObject Character;
-    [SerializeField]
-    private Text WeightInformation;
+    [SerializeField] private Text WeightInformation;
 
     private void Start()
     {
@@ -33,7 +30,7 @@ public class WeightAll : MonoBehaviour
                 temp += pr.Name + ": " + pr.Weight.ToString() + "\n";
             } catch (System.Exception e)
             {
-
+                Debug.LogException(e);
             }
             
         }

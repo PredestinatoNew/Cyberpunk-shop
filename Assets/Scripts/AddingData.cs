@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class AddingData : MonoBehaviour
 {
     public InputField NameInput;
-    public InputField AgeInput;
+    //public InputField AgeInput;
     public InputField BalanceInput;
     public InputField BonusesInput;
     public void AddName()
@@ -14,12 +14,12 @@ public class AddingData : MonoBehaviour
         Customer.Name = NameInput.text;
         Debug.Log(Customer.Name);
     }
-    public void AddAge()
+    /*public void AddAge()
     {
         
         Customer.Age = Mathf.Abs(int.Parse(AgeInput.text)); 
         Debug.Log(Customer.Age);
-    }
+    }*/
     public void AddBalance()
     {
 
