@@ -21,6 +21,9 @@ public class MouseLook : MonoBehaviour
 	{
 		// Store the initial rotation
 		targetRot = transform.rotation;
+
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 	}
 
 	void Update()
