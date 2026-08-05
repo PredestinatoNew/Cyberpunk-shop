@@ -32,12 +32,10 @@ public class Interaction : MonoBehaviour
         NoWeightPanel.SetActive(false);
         PayPanel.SetActive(false);
         fpc = Character.GetComponent<FirstPersonController>();
-        Cursor.visible = false;
         Ray ray = Camera.main.ScreenPointToRay(RayStartPosition);
     }
     protected virtual void Update()
     {
-        
         Ray ray = Camera.main.ScreenPointToRay(RayStartPosition);
         PriceInformation.text = "";
         Debug.DrawRay(ray.origin, ray.direction * Distance, Color.yellow);
@@ -78,14 +76,8 @@ public class Interaction : MonoBehaviour
                         case "Banana": PriceInformation.text = "E: " + BananaPrice.ToString() + " $$"; break;
                     }
                 }
-				/*
-				else
-                {
-                    PriceInformation.text = "";
-                }
-                */
 
-				if (hit.transform.CompareTag("Cart"))
+				else if (hit.transform.CompareTag("Cart"))
 				{
 					PriceInformation.text = "Press E to get CART";
 
@@ -96,8 +88,8 @@ public class Interaction : MonoBehaviour
 						hit.transform.localRotation = Quaternion.Euler(0, 90f, 0);                       
 					}
 				}
-
-				if (hit.transform.CompareTag("Weight"))
+                /*
+				else if (hit.transform.CompareTag("Weight"))
                 {
                     PriceInformation.text = "E: " + "Weight products";
                     if (Input.GetKeyUp(KeyCode.E) && !IsPanelActive.AnotherPanelIsActive)
@@ -124,13 +116,14 @@ public class Interaction : MonoBehaviour
 
                     }
                 }
-
-                if (hit.transform.CompareTag("Pay"))
+                */
+                else if (hit.transform.CompareTag("Pay"))
                 {
                     PriceInformation.text = "E: " + "Pay";
                     if (Input.GetKeyUp(KeyCode.E) && !IsPanelActive.AnotherPanelIsActive)
                     {
                         IsPanelActive.AnotherPanelIsActive = true;
+                        /*
                         int count = 0;
                         foreach (Products product in Customer.ProductsInBascet)
                         {
@@ -145,7 +138,7 @@ public class Interaction : MonoBehaviour
                             }
                             catch (System.Exception e)
                             {
-
+                                Debug.LogException(e);
                             }
 
                         }
@@ -156,11 +149,11 @@ public class Interaction : MonoBehaviour
                             fpc.Stop();
                         } else
                         {
+                        */
                             PayPanel.SetActive(true);
                             Cursor.visible = true;
                             fpc.Stop();
-                        }
-
+                        //}
                     }
                 }
             }
