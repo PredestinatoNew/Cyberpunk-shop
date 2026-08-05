@@ -44814,9 +44814,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1282007823}
-  m_Layer: 0
+  - component: {fileID: 1282007824}
+  m_Layer: 6
   m_Name: cart (2)
-  m_TagString: Untagged
+  m_TagString: Cart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44840,6 +44841,27 @@ Transform:
   - {fileID: 1089073006}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &1282007824
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282007822}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 112.25734, y: 55.62549, z: 52.38579}
+  m_Center: {x: -4.3069115, y: 67.57443, z: -0.407443}
 --- !u!1 &1283063269
 GameObject:
   m_ObjectHideFlags: 0
@@ -72474,9 +72496,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2061942993}
-  m_Layer: 0
+  - component: {fileID: 2061942994}
+  m_Layer: 6
   m_Name: cart (1)
-  m_TagString: Untagged
+  m_TagString: Cart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72500,6 +72523,27 @@ Transform:
   - {fileID: 521313285}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &2061942994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061942992}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 112.25734, y: 55.62549, z: 52.38579}
+  m_Center: {x: -4.3069115, y: 67.57443, z: -0.407443}
 --- !u!1 &2062594829
 GameObject:
   m_ObjectHideFlags: 0
@@ -73575,9 +73619,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2092069442}
-  m_Layer: 0
+  - component: {fileID: 2092069443}
+  m_Layer: 6
   m_Name: cart (3)
-  m_TagString: Untagged
+  m_TagString: Cart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73601,6 +73646,27 @@ Transform:
   - {fileID: 2031947544}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &2092069443
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092069441}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 112.25734, y: 55.62549, z: 52.38579}
+  m_Center: {x: -4.3069115, y: 67.57443, z: -0.407443}
 --- !u!1 &2095170893
 GameObject:
   m_ObjectHideFlags: 0
@@ -78381,9 +78447,9 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652347548489}
   - component: {fileID: 919132148358781428}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cart
-  m_TagString: Untagged
+  m_TagString: Cart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78407,8 +78473,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 139.20995, y: 106.105995, z: 273.0715}
-  m_Center: {x: 6.6453485, y: 52.31455, z: -86.32862}
+  m_Size: {x: 112.25734, y: 55.62549, z: 52.38579}
+  m_Center: {x: -4.3069115, y: 67.57443, z: -0.407443}
 --- !u!1 &919132148379411461
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,13 +50,13 @@ public class Interaction : MonoBehaviour
 
                 if (hit.transform.CompareTag("PickUp"))
                 {
-                    
+
                     if (Input.GetKeyUp(KeyCode.E) && !IsPanelActive.AnotherPanelIsActive)
                     {
                         PriceInformation.text = "";
                         Destroy(hit.transform.gameObject);
                         string productName = hit.transform.gameObject.name.ToString();
-                        
+
                         switch (productName)
                         {
                             case "Milk": Customer.ProductsInBascet.Add(new PieceProductInBascet() { Name = productName, PriceFor = MilkPrice }); Debug.Log(productName); break;
@@ -77,13 +77,27 @@ public class Interaction : MonoBehaviour
                         case "Cherry": PriceInformation.text = "E: " + CherryPrice.ToString() + " $$"; break;
                         case "Banana": PriceInformation.text = "E: " + BananaPrice.ToString() + " $$"; break;
                     }
-                } 
-                else
+                }
+				/*
+				else
                 {
                     PriceInformation.text = "";
                 }
+                */
 
-                if (hit.transform.CompareTag("Weight"))
+				if (hit.transform.CompareTag("Cart"))
+				{
+					PriceInformation.text = "Press E to get CART";
+
+					if (Input.GetKeyUp(KeyCode.E))
+					{
+						hit.transform.SetParent(transform.root);
+						hit.transform.localPosition = new Vector3(0, -0.5f, 2f);
+						hit.transform.localRotation = Quaternion.Euler(0, 90f, 0);                       
+					}
+				}
+
+				if (hit.transform.CompareTag("Weight"))
                 {
                     PriceInformation.text = "E: " + "Weight products";
                     if (Input.GetKeyUp(KeyCode.E) && !IsPanelActive.AnotherPanelIsActive)
@@ -151,6 +165,7 @@ public class Interaction : MonoBehaviour
                 }
             }
         }
+        /*
         if (Input.GetKeyUp(KeyCode.Escape) && (WeightPanel.activeSelf))
         {
             WeightPanel.SetActive(false);
@@ -163,6 +178,7 @@ public class Interaction : MonoBehaviour
             Cursor.visible = true;
             fpc.Stop();
         }
+        */
     }
     
 }
