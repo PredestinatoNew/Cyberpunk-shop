@@ -49,10 +49,11 @@ public class Interaction : MonoBehaviour
                 if (hit.transform.CompareTag("PickUp"))
                 {
 
-                    if (Input.GetKeyUp(KeyCode.E) && !IsPanelActive.AnotherPanelIsActive)
+                    if (Input.GetKeyUp(KeyCode.R) && !IsPanelActive.AnotherPanelIsActive)
                     {
                         PriceInformation.text = "";
-                        Destroy(hit.transform.gameObject);
+                        hit.transform.gameObject.layer = LayerMask.NameToLayer("Default");
+						FirstPersonController.getInstance().cart.AddToCartObj(hit.transform.gameObject);
                         string productName = hit.transform.gameObject.name.ToString();
 
                         switch (productName)
@@ -79,10 +80,12 @@ public class Interaction : MonoBehaviour
 
 				else if (hit.transform.CompareTag("Cart"))
 				{
-					PriceInformation.text = "Press E to get CART";
+					PriceInformation.text = "Press R to get CART";
 
-					if (Input.GetKeyUp(KeyCode.E))
+					if (Input.GetKeyUp(KeyCode.R))
 					{
+						hit.transform.gameObject.layer = LayerMask.NameToLayer("Default");
+						FirstPersonController.getInstance().cart = hit.transform.GetComponent<Cart>();
 						hit.transform.SetParent(transform.root);
 						hit.transform.localPosition = new Vector3(0, -0.5f, 2f);
 						hit.transform.localRotation = Quaternion.Euler(0, 90f, 0);                       
@@ -120,10 +123,11 @@ public class Interaction : MonoBehaviour
                 else if (hit.transform.CompareTag("Pay"))
                 {
                     PriceInformation.text = "E: " + "Pay";
-                    if (Input.GetKeyUp(KeyCode.E) && !IsPanelActive.AnotherPanelIsActive)
+                    if (Input.GetKeyUp(KeyCode.R) && !IsPanelActive.AnotherPanelIsActive)
                     {
                         IsPanelActive.AnotherPanelIsActive = true;
-                        /*
+                        FirstPersonController.getInstance().mouseLook.enabled = false;
+						/*
                         int count = 0;
                         foreach (Products product in Customer.ProductsInBascet)
                         {
@@ -150,7 +154,7 @@ public class Interaction : MonoBehaviour
                         } else
                         {
                         */
-                            PayPanel.SetActive(true);
+						//PayPanel.SetActive(true);
                             Cursor.visible = true;
                             fpc.Stop();
                         //}

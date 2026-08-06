@@ -4,11 +4,14 @@ public class FirstPersonController : MonoBehaviour
 {
 	private static FirstPersonController instance;
 
+	public Cart cart;
+	public MouseLook mouseLook;
+
 	private FirstPersonController() { }
 
 	public static FirstPersonController getInstance()
 	{
-		if (instance == null)
+		if (instance is null)
 			instance = new FirstPersonController();
 		return instance;
 	}
@@ -17,11 +20,20 @@ public class FirstPersonController : MonoBehaviour
 	[SerializeField] private float runSpeed = 18.0f;
 	[SerializeField] private float jumpHeight = 2f;
 	[SerializeField] private float gravity = -10.0f;
+	[SerializeField] private float rotationSpeed = 100.0f; // Velocità di rotazione (gradi al secondo)
 
 	private CharacterController cc;
 
 	// Vertical Velocity Current during jump
 	private float verticalVelocity;
+
+	private void Awake()
+	{
+		if (instance is null)
+			instance = this;
+		else if (instance != this)
+			Destroy(gameObject);
+	}
 
 	void Start()
 	{
@@ -31,6 +43,14 @@ public class FirstPersonController : MonoBehaviour
 
 	void FixedUpdate()
 	{
+		// Rotazione con Q (sinistra) ed E (destra)
+		float turnInput = 0f;
+		if (Input.GetKey(KeyCode.E)) turnInput += 1f;
+		if (Input.GetKey(KeyCode.Q)) turnInput -= 1f;
+
+		// Applica la rotazione sull'asse Y (Yaw)
+		transform.Rotate(0f, turnInput * rotationSpeed * Time.fixedDeltaTime, 0f);
+
 		// Get input from default movement axes (WASD / Arrow keys)
 		float horizontal = Input.GetAxis("Horizontal");
 		float vertical = Input.GetAxis("Vertical");
